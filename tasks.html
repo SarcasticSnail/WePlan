@@ -1,0 +1,112 @@
+<!DOCTYPE HTML>
+
+<html>
+    <head>
+        <title>Tasks</title>
+        <link rel = "stylesheet" type = "text/css" href = "sidebarStyle.css"/>
+        <link rel = "stylesheet" type = "text/css" href = "tasks.css"/>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700;800;900&display=swap" rel="stylesheet">
+    </head>
+
+    <body>
+        <!--SIDEBAR-->
+        <!--LOGO-->
+        <img id="logo" src="WePlanLogo.png">
+        <div id = "sidebar">
+            <div id = "user_info">
+                <img id = "userID" src = "userIcon.png">
+                <h3>Jane Doe</h3>
+            </div>
+            <div id = "projects">
+                <div id = "current">
+                    <h2>Current Projects</h2>
+                    <ul id = "current_list">
+                        <li id="first_current" onclick="changeNames('La Biblioteca','first_current')"><a>La Bibliotecha</a></li>
+                        <li id="second_current" onclick="changeNames('Biology Yam', 'second_current')"><a>Biology Yam</a></li>
+                    </ul>
+                    <div id = "add_project">
+                        <button onClick = "addProjectLi()">
+                            <img src = "plusIcon.png" id="add_project_btn">
+                        </button>
+                        <input type = "text" id="new_project_name" placeholder="new project name">
+                        <script>
+                            function addProjectLi(){
+                                var txtVal = document.getElementById('new_project_name').value,
+                                    listNode = document.getElementById('current_list'),
+                                    liNode = document.createElement("LI"),
+                                    txtNode = document.createTextNode(txtVal)
+                                liNode.appendChild(txtNode);
+                                listNode.append(liNode);
+                            }
+
+                        </script>
+                    </div>
+                </div>
+                <div id = "archived"><a>
+                    <h2>Archived Projects</h2>
+                    <ul>
+                        <li><a>project 5</a></li>
+                        <li><a>project 6</a></li>
+                        <li><a>project 7</a></li>
+                        <li><a>project 8</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!--SIDEBAR DONE-->
+        <!--TOPBAR-->
+        <div id="topbar">
+            <ul>
+                <li id="pageTracker"><a onclick="changePage('tasks_page')" href = "tasks.html">Tasks</a></li>
+                <li><a onclick="changePage('group_page')" href = "members.html">Group Info</a></li>
+                <li><a onclick="changePage('materials_page')" href = "materials.html">Project Materials</a></li>
+            </ul>
+        </div>
+
+
+        <!--DONE WITH STANDARD BARS-->
+
+
+
+        <h1 id="this_project" >Project Name</h1>
+        
+
+        <!--TABLE TIME!-->
+        <div id="task_list">
+            <!--DA TABLE!!!-->
+            <table id="task_table">
+                <tr>
+                    <th>Group Member</th>
+                    <th>Task Name</th>
+                    <th>Progress</th>
+                    <th>Due Date</th>
+                    <th>Needs Help?</th>
+                </tr>
+                <tr>
+                    <td>Annie Edison</td>
+                    <td>Write Paper</td>
+                    <td id="progress_box" onclick="changeProgress()">Not Started</td>
+                    <td>2021-10-27</td>
+                    <td id="help_box" onclick="changeHelp()">No</td>
+                </tr>
+            </table>
+            <!--MORE TABLE FRIENDS!!-->
+            <div id = "adding_tasks">
+                <button id="task_btn" onclick ="addTable()">
+                    <img src = "plusIcon.png" id="add_tasks_btn">
+                </button>
+                <input type = "text" id="new_member_name" placeholder="member name">
+                <input type = "text" id="new_task_name" placeholder="task name">
+                <input type = "date" id="new_due_date" placeholder="due date">
+            </div>
+        </div>
+        <script src = "tasks.js"></script>
+        <!--DONE WITH TABLE :(-->
+        <script src = "names.js"></script>
+
+    </body>
+        
+
+</html>

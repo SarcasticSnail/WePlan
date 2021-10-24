@@ -1,0 +1,121 @@
+<!DOCTYPE HTML>
+
+<html>
+    <head>
+        <title>Materials</title>
+        <link rel = "stylesheet" type = "text/css" href = "sidebarStyle.css"/>
+        <link rel = "stylesheet" type = "text/css" href = "materials.css"/>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700;800;900&display=swap" rel="stylesheet">
+    </head>
+
+    <body>
+        <!--SIDEBAR-->
+        <img id="logo" src="WePlanLogo.png">
+        <div id = "sidebar">
+            <div id = "user_info">
+                <img id = "userID" src = "userIcon.png">
+                <h3>Jane Doe</h3>
+            </div>
+            <div id = "projects">
+                <div id = "current">
+                    <h2>Current Projects</h2>
+                    <ul id = "current_list">
+                        <li id="first_current" onclick="changeNames('La Biblioteca','first_current')"><a>La Bibliotecha</a></li>
+                        <li id="second_current" onclick="changeNames('Biology Yam', 'second_current')"><a>Biology Yam</a></li>
+                    </ul>
+                    <div id = "add_project">
+                        <button onClick = "addProjectLi()">
+                            <img src = "plusIcon.png" id="add_project_btn">
+                        </button>
+                        <input type = "text" id="new_project_name" placeholder="new project name">
+                        <script>
+                            function addProjectLi(){
+                                var txtVal = document.getElementById('new_project_name').value,
+                                    listNode = document.getElementById('current_list'),
+                                    liNode = document.createElement("LI"),
+                                    txtNode = document.createTextNode(txtVal)
+                                liNode.appendChild(txtNode);
+                                listNode.append(liNode);
+                            }
+
+                        </script>
+                    </div>
+                </div>
+                <div id = "archived"><a>
+                    <h2>Archived Projects</h2>
+                    <ul>
+                        <li><a>project 5</a></li>
+                        <li><a>project 6</a></li>
+                        <li><a>project 7</a></li>
+                        <li><a>project 8</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!--SIDEBAR DONE-->
+        <!--TOPBAR-->
+        <div id="topbar">
+            <ul>
+                <li><a onclick="changePage('tasks_page')" href = "tasks.html">Tasks</a></li>
+                <li><a onclick="changePage('group_page')" href = "members.html">Group Info</a></li>
+                <li id="pageTracker"><a onclick="changePage('materials_page')" href = "materials.html">Project Materials</a></li>
+            </ul>
+        </div>
+
+        <div id = "pop_box">
+            <form>
+                <h3 id="test">Material Type</h3> <br>
+                <input class = "bullet" type="radio" id="doc_check" name="material_type">
+                <label for="doc_check"> Google Doc</label><br>
+                <input class = "bullet" type="radio" id="slide_check" name="material_type">
+                <label for="slide_check"> Google Slide</label><br>
+                <input class = "bullet" type="radio" id="link_check" name="material_type">
+                <label for="link_check">Other Link</label><br>
+                <input class = "url" id="link_href" type="url" placeholder="Link"><br>
+                <input class = "url" id="link_name" type="text" placeholder="Display Name"><br><br>
+                <button type="button" onclick="changePic()" id="submit_link">Submit</button>
+              </form>
+        </div>
+
+        <!--GRIDDDDDDD-->
+        
+        <h1>La Biblioteca Materials</h1>
+        <table>
+            <tr>
+                <td>
+                    <h3 id="one"></h3>
+                    <button onclick="showBox(1)"><a id="firstOne" target="_blank"><img id="first" src = "plusIcon.png"></a></button>
+                </td>
+                <td>
+                    <h3 id="two"></h3>
+                    <button onclick="showBox(2)"><a id="secondTwo" target="_blank"><img id="second" src = "plusIcon.png"></a></button>
+                </td>
+                <td>
+                    <h3 id="three"></h3>
+                    <button onclick="showBox(3)"><a id="thirdThree" target="_blank"><img id="third" src = "plusIcon.png"></a></button>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <h3 id="four"></h3>
+                    <button onclick="showBox(4)"><a id="fourthFour" target="_blank"><img id="fourth" src = "plusIcon.png"></a></button>
+                </td>
+                <td>
+                    <h3 id="five"></h3>
+                    <button onclick="showBox(5)"><a id="fifthFive" target="_blank"><img id="fifth" src = "plusIcon.png"></a></button>
+                </td>
+                <td>
+                    <h3 id="six"></h3>
+                    <button onclick="showBox(6)"><a id="sixthSix" target="_blank"><img id="sixth" src = "plusIcon.png"></a></button>
+                </td>
+            </tr>
+        </table>
+        <script src = "materials.js"></script>
+        <script src = "names.js"></script>
+
+    </body>
+        
+
+</html>

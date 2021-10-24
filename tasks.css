@@ -1,0 +1,71 @@
+#this_project {
+    position: absolute;
+    margin-top: 4rem;
+    margin-left: 25rem;
+    color: #305020;
+}
+
+/*TABLE TASTIC!*/
+
+#task_list {
+    position: absolute;
+    margin-top: 12rem;
+    margin-left: 25rem;
+}
+
+table {
+    width: 130%;
+    border:none;
+    border-collapse: collapse;
+}
+
+table th {
+    font-size: 20px;
+    padding-bottom: 10px;
+    color: #5f5035;
+}
+table td {
+    border: 1px solid #5f5035;
+    text-align: center;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    font-size: 18px;
+    color: #6d5f45;
+}
+
+table td:first-child {
+    border-left: none;
+}
+
+table td:last-child {
+    border-right: none;
+}
+
+/*ADDING TASKY FRIENDS :D*/
+
+#adding_tasks{
+    display: flex;
+    margin-top: 2rem;
+}
+
+#adding_tasks img {
+    width: 2rem;
+}
+
+#adding_tasks input {
+    margin-left: 10px;
+    border:none;
+    height: 1.7rem;
+    border-radius: 100px;
+    padding-left: 1em;
+    padding-right: 1em;
+    background-color: rgb(103, 185, 65);
+    color: #3d642a;
+    font-weight: 700;
+    text-align: center;
+}
+
+#adding_tasks input::placeholder {
+    color: #3d642a;
+    font-weight: 700;
+}
